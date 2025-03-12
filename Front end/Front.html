@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link>
+    <title>Bookgram</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #078b94;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            text-align: center;
+            background: #555;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background: rgb(255, 255, 255);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: relative;
+        }
+        .book {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 15px;
+        }
+        .book img {
+            width: 120px;
+            height: 180px;
+            margin-right: 25px;
+            border-radius: 5px;
+        }
+        .read-button {
+            display: none;
+            background: #078b94;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .book:hover .read-button {
+            display: inline-block;
+        }    
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .form-container {
+            max-width: 700px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-container button {
+            background: #555;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .form-container button:hover {
+            background: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Bookgram - Your Gateway to Knowledge
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Books</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Subscription</a>
+    </nav>
+    <div class="container">
+        <h2>Featured Books</h2>
+        <div class="book">
+            <img src="silent patient.jpg" alt="Book 1">
+            <div>
+                <h3>The Silent Patient</h3>
+                <p><strong>Author:</strong> Alex Michaelides</p>
+                <p>Theo Faber is a criminal psychotherapist who has waited a long time for the opportunity to work with Alicia. His determination to get her to talk and unravel the mystery of why she shot her husband takes him down a twisting path into his own motivations? a search for the truth that threatens to consume him. . . .</p>
+                <button class="read-button">Read Book</button>
+            </div>
+        </div>
+        <div class="book">
+            <img src="You've reached sam.jpg" alt="Book 2">
+            <div>
+                <h3>You've Reached Sam</h3>
+                <p><strong>Author:</strong> Dustin Thao</p>
+                <p> Seventeen-year-old Julie Clarke has her future all planned out―move out of her small town with her boyfriend Sam, attend college in the city; spend a summer in Japan. But then Sam dies. And everything changes. Heartbroken, Julie skips his funeral, throws out his belongings, and tries everything to forget him.</p>
+                <button class="read-button">Read Book</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <div class="footer">
+        &copy; 2025 Bookgram. All Rights Reserved. | Designed for Book Lovers
+    </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Book Haven</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #078b94;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            text-align: center;
+            background: #555;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .search-bar, .filter-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-bar input, .filter-bar select {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .book-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .book-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .read-button {
+            background: #078b94;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function searchBooks() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let books = document.getElementsByClassName('book-card');
+            
+            for (let book of books) {
+                let title = book.getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    book.style.display = "block";
+                } else {
+                    book.style.display = "none";
+                }
+            }
+        }
+        
+        function filterBooks() {
+            let filter = document.getElementById('categoryFilter').value;
+            let books = document.getElementsByClassName('book-card');
+            
+            for (let book of books) {
+                if (filter === "all" || book.dataset.category === filter) {
+                    book.style.display = "block";
+                } else {
+                    book.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Bookgram - Books
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Books</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <h2>All Books</h2>
+        <div class="search-bar">
+            <input type="text" id="search" onkeyup="searchBooks()" placeholder="Search for books...">
+        </div>
+        <div class="filter-bar">
+            <select id="categoryFilter" onchange="filterBooks()">
+                <option value="all">All Categories</option>
+                <option value="thriller">Thriller</option>
+                <option value="romance">Romance</option>
+                <option value="mystery">Mystery</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="historical">Historical</option>
+            </select>
+        </div>
+        <div class="book-grid">
+            <div class="book-card" data-category="thriller">
+                <img src="silent patient.jpg" alt="The Silent Patient">
+                <h3>The Silent Patient</h3>
+                <p><strong>Author:</strong> Alex Michaelides</p>
+                <button class="read-button">Read Book</button>
+            </div>
+            <div class="book-card" data-category="romance">
+                <img src="You've reached sam.jpg" alt="You've Reached Sam">
+                <h3>You've Reached Sam</h3>
+                <p><strong>Author:</strong> Dustin Thao</p>
+                <button class="read-button">Read Book</button>
+            </div>
+            <div class="book-card" data-category="mystery">
+                <img src="crawdad.jpg" alt="Where the Crawdads Sing">
+                <h3>Where the Crawdads Sing</h3>
+                <p><strong>Author:</strong> Delia Owens</p>
+                <button class="read-button">Read Book</button>
+            </div>
+            <div class="book-card" data-category="fantasy">
+                <img src="night.jpg" alt="The Night Circus">
+                <h3>The Night Circus</h3>
+                <p><strong>Author:</strong> Erin Morgenstern</p>
+                <button class="read-button">Read Book</button>
+            </div>
+            <div class="book-card" data-category="historical">
+                <img src="the book theif.jpg" alt="The Book Thief">
+                <h3>The Book Thief</h3>
+                <p><strong>Author:</strong> Markus Zusak</p>
+                <button class="read-button">Read Book</button>
+            </div>
+            <div class="book-card" data-category="thriller">
+                <img src="the curse.jpg" alt="The Curse of Muziris">
+                <h3>The Curse of Muziris</h3>
+                <p><strong>Author:</strong>  Amish Tripathi</p>
+                <button class="read-button">Read Book</button>
+            </div>
+            <div class="book-card" data-category="romance">
+                <img src="first.jpg" alt="First-Time Caller">
+                <h3>First-Time Caller</h3>
+                <p><strong>Author:</strong> B.K. Borison</p>
+                <button class="read-button">Read Book</button>
+            </div>
+            <div class="book-card" data-category="mystery">
+                <img src="needy.jpg" alt="Needy Little Things">
+                <h3>Needy Little Things</h3>
+                <p><strong>Author:</strong> Channelle Desamours</p>
+                <button class="read-button">Read Book</button>
+            </div>
+            <div class="book-card" data-category="fantasy">
+                <img src="emily.jpg" alt="Emily Wilde's Compendium of Lost Tales">
+                <h3>Emily Wilde's Compendium of Lost Tales</h3>
+                <p><strong>Author:</strong> Heather Fawcett</p>
+                <button class="read-button">Read Book</button>
+            </div>
+            <div class="book-card" data-category="historical">
+                <img src="come fly.jpg" alt="Come Fly with Me">
+                <h3>Come Fly with Me</h3>
+                <p><strong>Author:</strong> Camille Di Maio</p>
+                <button class="read-button">Read Book</button>
+            </div>
+        </div>
+        <h3 style="text-align: center; margin-top: 30px;">More Books...</h3>
+    </div>
+    <div class="footer">
+        &copy; 2025 Bookgram. All Rights Reserved. | Designed for Book Lovers
+    </div>
+</body>
+</html>
